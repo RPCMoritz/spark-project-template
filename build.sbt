@@ -1,8 +1,10 @@
 name := "spark-project-template"
 
-version := "1.0"
+version := "1.0.cloudera"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.8"
+
+resolvers += "Cloudera CDH dependencies" at "https://repository.cloudera.com/artifactory/cloudera-repos/"
 
 // | @see https://github.com/jrudolph/sbt-dependency-graph
 net.virtualvoid.sbt.graph.Plugin.graphSettings
@@ -11,11 +13,11 @@ net.virtualvoid.sbt.graph.Plugin.graphSettings
 // | Comment this line if error "Skipping update requested, but update has not previously run successfully."
 // skip in update := true
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % "1.3.0" withSources() withJavadoc()
+libraryDependencies += "org.apache.spark" %% "spark-core_2.11" % "2.0.0.cloudera1" withSources() withJavadoc()
 
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "1.3.0" withSources() withJavadoc()
+libraryDependencies += "org.apache.spark" %% "spark-sql_2.11" % "2.0.0.cloudera1" withSources() withJavadoc()
 
-libraryDependencies += "org.apache.spark" %% "spark-hive" % "1.3.0" withSources() withJavadoc()
+libraryDependencies += "org.apache.spark" %% "spark-hive_2.11" % "2.0.0.cloudera1" withSources() withJavadoc()
 
 
 // | Before bundling the project for a spark-submit, comment the spark-* dependencies above
